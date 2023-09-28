@@ -24,7 +24,14 @@ def contact(request):
             data = customerData(name=name, email=email,
                                 subject=subject, message=message)
             data.save()
-    fm = InquiryForm()
+            context = {
+                'contact': 'active',
+                'name': name
+            }
+            return render(request, 'core/success.html', context)
+
+    else:
+        fm = InquiryForm()
     context = {
         'contact': 'active',
         'form': fm
