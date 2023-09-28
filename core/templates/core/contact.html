@@ -6,29 +6,42 @@
         Contact Me
     </h1>
     <div class="row text-white mb-5">
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, error_list in form.errors.items %}
+                {% for error in error_list %}
+                <li>{{ field }}: {{ error }}</li>
+                <br>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
         <p class="mx-auto mb-5">
             Do you have any questions ? Please do not hesitate to contact. I will respond to you within 24 hours to help you.
         </p>
         <div class="col-sm-9 mb-5">
-            <form action="{% url 'save' %}" method="post">
+            <form action="{% url 'contact' %}" method="post">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputName">Your Name</label>
-                        <input class="form-control" type="text" name="inputName" id="inputName">
+                        {{form.inputName.label_tag}}
+                        {{form.inputName}}
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputEmail">Your Email <b class="text-warning">*</b> </label>
-                        <input class="form-control" type="email" name="inputEmail" id="inputEmail" required>
+                        {{form.inputEmail.label_tag}}
+                        {{form.inputEmail}}
                     </div>
                 </div>
                     <div class="form-group">
-                        <label for="inputSubject">Your Subject</label>
-                        <input type="text" name="inputSubject" id="inputSubject" class="form-control"/>
+                        {{form.inputSubject.label_tag}}
+                        {{form.inputSubject}}
                     </div>
                 <div class="mb-3">
-                    <label for="inputTextarea">Your Message <b class="text-warning">*</b></label>
-                    <textarea class="form-control" name="inputTextarea" id="inputTextarea" required></textarea>
+                    {{form.inputMessage.label_tag}}
+                    {{form.inputMessage}}
                 </div>
                 <button type="submit" class="btn btn-primary form-control mt-3">Send</button>
             </form>
