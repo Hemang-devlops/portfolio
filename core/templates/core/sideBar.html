@@ -1,4 +1,17 @@
 {% load static %}
+<style>
+
+.a-link:hover {
+    color: black;
+    background-color: #4646ff;
+}
+
+.a-link.active {
+    color: black;
+    background-color: #0000ff;
+    font-weight: bold;
+}
+</style>
 <div class="border-right border-danger h-100 text-center">
     <div class="">
         <img class="img-fluid rounded-circle mt-5" width='100px' height='100px'
@@ -7,9 +20,9 @@
     </div>
     <hr class="border-light">
     <nav class="nav flex-column text-right pr-3">
-        <a href="{% url 'Home' %}" class="nav-link">Home</a>
-        <a href="{% url 'services' %}" class="nav-link">Services</a>
-        <a href="{% url 'skill' %}" class="nav-link">Skills</a>
-        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+        <a href="{% url 'Home' %}" class="a-link nav-link {{ home }}" style="color: whitesmoke;">Home</a>
+        <a href="{% url 'services' %}" class="a-link nav-link {{ services }}" style="color: whitesmoke;">Services</a>
+        <a href="{% url 'skill' %}" class="a-link nav-link {{ skill }}" style="color: whitesmoke;">Skills</a>
+        <a href="{% url 'contact' %}" class="a-link nav-link {{ contact }}" style="color: whitesmoke;">Contact</a>
     </nav>
 </div>

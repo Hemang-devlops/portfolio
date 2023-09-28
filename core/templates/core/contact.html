@@ -10,7 +10,8 @@
             Do you have any questions ? Please do not hesitate to contact. I will respond to you within 24 hours to help you.
         </p>
         <div class="col-sm-9 mb-5">
-            <form action="" method="post">
+            <form action="{% url 'save' %}" method="post">
+                {% csrf_token %}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputName">Your Name</label>
@@ -27,7 +28,7 @@
                     </div>
                 <div class="mb-3">
                     <label for="inputTextarea">Your Message <b class="text-warning">*</b></label>
-                    <textarea class="form-control" id="inputTextarea" required></textarea>
+                    <textarea class="form-control" name="inputTextarea" id="inputTextarea" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary form-control mt-3">Send</button>
             </form>
@@ -60,7 +61,7 @@
             <i class="fa-brands fa-instagram green-color mr-3"></i>
         </a>
         <a href="">
-            <i class="fa-brands fa-dribbble green-color mr-3"></i>
+            <i class="fa-brands fa-linkedin green-color mr-3"></i>
         </a>
     </div>
 </div>

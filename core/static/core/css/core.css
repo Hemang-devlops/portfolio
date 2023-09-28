@@ -18,3 +18,18 @@ html, body{
 .para{
     color: silver
 }
+
+.a-link {
+    color: whitesmoke
+}
+
+.a-link:hover {
+    color: black;
+    background-color: aqua;
+}
+
+.a-link.active {
+    color: black;
+    background-color: blue;
+    font-weight: bold;
+}

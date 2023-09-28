@@ -23,8 +23,9 @@
             <div class="col-sm-10">
                 {% block content %}
                 {% endblock content %}
-                <div class="text-center"><a href="" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
-                    <a href="" class="btn btn-outline-info my-3">Contact Me</a>
+                <div class="text-center">
+                    <a href="{% url 'contact' %}" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-info my-3">Contact Me</a>
                 </div>
             </div>
         </div>
