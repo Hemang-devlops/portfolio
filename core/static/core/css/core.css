@@ -1,0 +1,20 @@
+.roboto-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+.container-fluid{
+    min-height: 100%;
+}
+
+/* Services Color */
+.green-color{
+    color: chartreuse;
+}
+
+.para{
+    color: silver
+}

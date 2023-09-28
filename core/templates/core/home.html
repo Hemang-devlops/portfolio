@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center">
+    <img src="{% static 'core/images/headshot.jpg' %}" class="img-thumbnail mt-5" alt="Profile Pic" width="250px" height="250px">
+    <div class="text-white text-justify mx-5 px-4" style="line-height: 2rem;">
+        <h2 class="">Hello, I'm <b class="text-warning font-italic">Jane Doe</b></h2>
+        <p style="text-indent:100px"> I'm a versatile Full Stack Developer, passionate about crafting innovative and efficient web solutions. With a comprehensive skill set that spans both frontend in <b class="text-warning">React.Js </b>and backend development in <b class="text-warning">Django</b>, I thrive in creating seamless and
+        responsive applications that elevate user experiences.</p>
+        <p>My journey in web development began <b class="text-warning">InfoTech</b>, and I've had the privilege of working on diverse projects that have deepened my expertise. From building dynamic web applications to optimizing server-side
+        performance, I love tackling challenges that require a holistic approach. My commitment to excellence extends to every layer of development, from designing elegant user interfaces with <b class="text-warning">HTML,
+        CSS</b>, and <b class="text-warning">JavaScript</b>, to architecting robust server-side logic using technologies like <b class="text-warning">Node.js, Python</b>, and databases
+        such as <b class="text-warning">PostgreSQL and MongoDB</b>.</p>
+        <p>Whether it's crafting intuitive user interfaces or optimizing database queries, I approach every task with precision
+        and a strong dedication to delivering high-quality solutions that exceed expectations.</p>
+    </div class='m-3'>
+    <!-- <div class="text-center"><a href="" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+    <a href="" class="btn btn-outline-info my-3">Contact Me</a>
+    </div> -->
+</div>
+{% endblock content %}
