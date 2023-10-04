@@ -1,0 +1,39 @@
+{% extends 'core/index.html' %}
+{% block content %}
+<div class="form-group text-white m-5">
+    <h1 class="text-warning mb-5 border-bottom">
+        Customer Data
+    </h1>
+    <table class="table table-dark table-striped ">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Message</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data %}
+                {% for obj in data %}
+                    <tr>
+                        <th scope="row">{{obj.id}}</th>
+                        <td>{{obj.name}}</td>
+                        <td>{{obj.email}}</td>
+                        <td>{{obj.subject}}</td>
+                        <td>{{obj.message}}</td>
+                        <td>
+                            <form action="{% url 'deleteData' obj.id %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="submit" value="Completed" class="btn btn-danger btn-sm">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

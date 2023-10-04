@@ -8,4 +8,5 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('serv/', include('serv.urls')),
     path('edu/', include('edu.urls')),
+    path('user/', include('login.urls')),
 ]

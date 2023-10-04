@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'edu',
     'serv',
+    'login',
 ]
 
 MIDDLEWARE = [

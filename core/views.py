@@ -26,7 +26,7 @@ def contact(request):
             data.save()
             context = {
                 'contact': 'active',
-                'name': name
+                'name': name,
             }
             return render(request, 'core/success.html', context)
 
