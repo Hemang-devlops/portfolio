@@ -2,24 +2,21 @@
 {% block content %}
 <div class="form-group text-white m-5">
     <h1 class="text-warning mb-5 border-bottom">
-        Log In to view Customer Details
+        Change Password
     </h1>
-    <form action="" class="" method="post" novalidate>
-        <p>
-            If you have not created an account yet, then please <a class="text-info" href="{% url 'signup' %}" >Sign up</a> first.
-        </p>
+    <form action="{% url 'changepwd' %}" class="form-group" method="post">
         {% csrf_token %}
         {% if form.non_field_errors %}
-            {% for error in form.non_field_errors %}
-                <section class="alert alert-danger">{{error}}</section>
-            {% endfor %}
+        {% for error in form.non_field_errors %}
+        <section class="alert alert-danger">{{error}}</section>
+        {% endfor %}
         {% endif %}
         <br>
         {% for fm in form %}
         {% if fm.errors %}<section class="alert alert-danger">{{fm.errors|striptags}}</section>{% endif%}
         {{fm.label_tag}}{{fm}}<br>
         {% endfor %}
-        <input type="submit" value="Log In" class="btn btn-primary">
+        <input type="submit" value="Change Password" class="btn btn-primary">
     </form>
 </div>
 {% endblock content %}
